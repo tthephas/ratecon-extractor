@@ -1,0 +1,30 @@
+PEACHTREE FREIGHT SOLUTIONS, LLC
+MC# 884213  |  dispatch@peachtreefreight.example  |  (404) 555-0182
+
+CARRIER RATE CONFIRMATION
+
+Load #: PFS-102938          Date: 11/03/2026
+Carrier: J&T Trucking LLC   MC# 1122334
+Equipment: 53' Dry Van
+
+---------------------------------------------------------
+STOP 1 - PICKUP
+Georgia Paper Converters
+2200 Industrial Pkwy, Dalton, GA 30721
+Date: 11/10/2026   Hours: 0700 - 1500
+Pickup #: GPC-55102     PO#: 4410923
+
+STOP 2 - DELIVERY
+Midwest Office Supply DC
+8800 Commerce Dr, Indianapolis, IN 46241
+Date: 11/11/2026   APPOINTMENT: 0600
+Appt #: MOS-77215     PO#: 4410923
+---------------------------------------------------------
+Commodity: Paper products, 22 pallets, 38,500 lbs
+
+RATE: $2,150.00 flat (all-in)
+
+NOTES:
+- Lumper at delivery will be reimbursed with valid receipt.
+- Carrier must accept Macropoint tracking at dispatch. Failure to
+  maintain tracking will result in a $150.00 deduction.

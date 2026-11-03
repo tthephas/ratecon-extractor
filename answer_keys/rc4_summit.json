@@ -1,0 +1,20 @@
+{
+  "broker_name": "Summit Lane Logistics",
+  "broker_mc": "702288",
+  "broker_load_number": "SLL-60431",
+  "equipment": "48' flatbed",
+  "stops": [
+    {"sequence": 1, "stop_type": "pickup",
+     "location": {"facility_name": "Southern Steel Supply", "address": "90 Foundry Way", "city": "Birmingham", "state": "AL", "zip_code": "35207"},
+     "time": {"kind": "window", "date": "2026-11-16", "start": "07:00", "end": "15:00"},
+     "references": [{"kind": "reference", "value": "SS-1180"}], "notes": []},
+    {"sequence": 2, "stop_type": "delivery",
+     "location": {"facility_name": "BuildRight Construction Yard", "address": "2615 Old Hwy 41", "city": "Marietta", "state": "GA", "zip_code": "30060"},
+     "time": {"kind": "appointment", "date": "2026-11-17", "start": "09:00", "end": null},
+     "references": [{"kind": "PO", "value": "BR-20033"}],
+     "notes": ["Do not arrive more than 4 hrs early"]}
+  ],
+  "commodity": {"description": "Steel rebar bundles", "packaging": "bundles", "pallet_count": null, "weight_lbs": 44000},
+  "rate": {"total": "1775.00", "linehaul": "1450.00", "fuel_surcharge": "275.00"},
+  "general_notes": ["Tarps required (4' drop)"]
+}

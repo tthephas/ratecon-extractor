@@ -1,0 +1,26 @@
+From: Mike Duran <mduran@lakeshorelg.example>
+Subject: Rate Con - Load 448812 - CHI to ATL reefer
+
+Hey team, thanks for covering this one. Confirming details below.
+
+Lakeshore Logistics Group (MC 667120) load 448812
+
+Truck: 53 reefer, run at 34F continuous, pre-cool required
+
+PU: Fresh Harvest Foods, 1450 W Fulton Market, Chicago IL 60607
+11/12, FCFS 6am-2pm, PU# FHF-3381
+
+DEL: Southern Grocers Warehouse, 500 Fulton Industrial Blvd SW,
+Atlanta GA 30336. Deliver 11/13. Appointment required - carrier
+must call receiving to schedule, they book between 5am and 11am.
+PO 99027-B
+
+Product: frozen vegetables, 20 plts, approx 41,000 lb
+
+Pay: linehaul $1,800.00 + FSC $412.50 = $2,212.50 total
+
+No parking on site at receiver. Late deliveries will be charged
+$250 by the customer and passed through to carrier.
+
+Thanks,
+Mike

@@ -1,0 +1,124 @@
+{
+  "broker_name": "Red Clay Transport Brokerage Inc",
+  "broker_mc": "553901",
+  "broker_load_number": "RCT-20261109-04",
+  "equipment": "53' dry van",
+  "stops": [
+    {
+      "sequence": 1,
+      "stop_type": "pickup",
+      "location": {
+        "facility_name": "Acme Plastics Plant 2",
+        "address": "400 Mill Rd",
+        "city": "Rome",
+        "state": "GA",
+        "zip_code": "30161"
+      },
+      "time": {
+        "kind": "window",
+        "date": "2026-11-09",
+        "start": "08:00",
+        "end": "12:00"
+      },
+      "references": [
+        {
+          "kind": "BOL",
+          "value": "778120"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "sequence": 2,
+      "stop_type": "pickup",
+      "location": {
+        "facility_name": "Acme Plastics Plant 5",
+        "address": "12 Riverside Dr",
+        "city": "Cartersville",
+        "state": "GA",
+        "zip_code": "30120"
+      },
+      "time": {
+        "kind": "window",
+        "date": "2026-11-09",
+        "start": "13:00",
+        "end": "16:00"
+      },
+      "references": [
+        {
+          "kind": "BOL",
+          "value": "778121"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "sequence": 3,
+      "stop_type": "delivery",
+      "location": {
+        "facility_name": "Home Store DC North",
+        "address": "7700 Park 80 W",
+        "city": "Nashville",
+        "state": "TN",
+        "zip_code": "37211"
+      },
+      "time": {
+        "kind": "appointment",
+        "date": "2026-11-10",
+        "start": "07:00",
+        "end": null
+      },
+      "references": [
+        {
+          "kind": "appointment number",
+          "value": "55190"
+        }
+      ],
+      "notes": [
+        "No early arrivals"
+      ]
+    },
+    {
+      "sequence": 4,
+      "stop_type": "delivery",
+      "location": {
+        "facility_name": "Home Store DC South",
+        "address": "310 Airways Blvd",
+        "city": "Memphis",
+        "state": "TN",
+        "zip_code": "38116"
+      },
+      "time": {
+        "kind": "appointment",
+        "date": "2026-11-10",
+        "start": "15:00",
+        "end": null
+      },
+      "references": [
+        {
+          "kind": "appointment number",
+          "value": "55191"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "commodity": {
+    "description": "Plastic housewares",
+    "packaging": "palletized",
+    "pallet_count": 26,
+    "weight_lbs": 29800
+  },
+  "rate": {
+    "total": "2900.00",
+    "linehaul": "2400.00",
+    "fuel_surcharge": "350.00",
+    "accessorials": [
+      {
+        "name": "stop-off pay (2 @ $75)",
+        "amount": "150.00"
+      }
+    ]
+  },
+  "tracking_required": true
+}
