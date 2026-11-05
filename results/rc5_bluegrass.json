@@ -1,0 +1,94 @@
+{
+  "raw": {
+    "broker_name": "Bluegrass Capacity Partners",
+    "broker_mc": "590047",
+    "broker_load_number": "BG-77120",
+    "references": [
+      {
+        "kind": "PO",
+        "value": "5518830"
+      }
+    ],
+    "equipment": "53' dry van",
+    "stops": [
+      {
+        "sequence": 1,
+        "stop_type": "pickup",
+        "location": {
+          "facility_name": "Kentucky Bourbon Bottling Co",
+          "address": "1 Distillery Ln",
+          "city": "Bardstown",
+          "state": "KY",
+          "zip_code": "40004"
+        },
+        "time": {
+          "kind": "window",
+          "date": "2026-11-18",
+          "start": "08:00",
+          "end": "14:00"
+        },
+        "references": [
+          {
+            "kind": "BOL",
+            "value": "30091"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "sequence": 2,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "Coastal Beverage Distributors",
+          "address": "4100 Sea Island Pkwy",
+          "city": "Savannah",
+          "state": "GA",
+          "zip_code": "31401"
+        },
+        "time": {
+          "kind": "window",
+          "date": "2026-11-19",
+          "start": "07:00",
+          "end": "12:00"
+        },
+        "references": [],
+        "notes": []
+      }
+    ],
+    "commodity": {
+      "description": "bottled spirits in cases",
+      "packaging": null,
+      "pallet_count": 18,
+      "weight_lbs": 36200
+    },
+    "rate": {
+      "total": 3050.0,
+      "linehaul": null,
+      "fuel_surcharge": null,
+      "accessorials": [],
+      "reimbursements": [
+        {
+          "name": "lumper",
+          "amount": 300.0,
+          "condition": "with original receipt; reimbursed up to cap"
+        }
+      ]
+    },
+    "penalties": [
+      {
+        "reason": "late delivery, $100.00 per hour late, assessed by the consignee",
+        "amount": 100.0
+      },
+      {
+        "reason": "failure to maintain active tracking link",
+        "amount": 200.0
+      }
+    ],
+    "tracking_required": true,
+    "general_notes": [
+      "Detention is paid after 2 free hours at $40/hr with in/out times on the BOL.",
+      "Carrier may not re-broker or double broker this load."
+    ]
+  },
+  "errors": []
+}

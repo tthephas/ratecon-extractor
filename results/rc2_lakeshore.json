@@ -1,0 +1,87 @@
+{
+  "raw": {
+    "broker_name": "Lakeshore Logistics Group",
+    "broker_mc": "667120",
+    "broker_load_number": "448812",
+    "references": [],
+    "equipment": "53' reefer",
+    "stops": [
+      {
+        "sequence": 1,
+        "stop_type": "pickup",
+        "location": {
+          "facility_name": "Fresh Harvest Foods",
+          "address": "1450 W Fulton Market",
+          "city": "Chicago",
+          "state": "IL",
+          "zip_code": "60607"
+        },
+        "time": {
+          "kind": "fcfs",
+          "date": "2026-11-12",
+          "start": "06:00",
+          "end": "14:00"
+        },
+        "references": [
+          {
+            "kind": "PU#",
+            "value": "FHF-3381"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "sequence": 2,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "Southern Grocers Warehouse",
+          "address": "500 Fulton Industrial Blvd SW",
+          "city": "Atlanta",
+          "state": "GA",
+          "zip_code": "30336"
+        },
+        "time": {
+          "kind": "appointment_to_schedule",
+          "date": "2026-11-13",
+          "start": "05:00",
+          "end": "11:00"
+        },
+        "references": [
+          {
+            "kind": "PO",
+            "value": "99027-B"
+          }
+        ],
+        "notes": [
+          "Appointment required - carrier must call receiving to schedule",
+          "No parking on site at receiver"
+        ]
+      }
+    ],
+    "commodity": {
+      "description": "frozen vegetables",
+      "packaging": "palletized",
+      "pallet_count": 20,
+      "weight_lbs": 41000
+    },
+    "rate": {
+      "total": 2212.5,
+      "linehaul": 1800.0,
+      "fuel_surcharge": 412.5,
+      "accessorials": [],
+      "reimbursements": []
+    },
+    "penalties": [
+      {
+        "reason": "late delivery (charged by customer and passed through to carrier)",
+        "amount": 250
+      }
+    ],
+    "tracking_required": false,
+    "general_notes": [
+      "Reefer: run at 34F continuous",
+      "Pre-cool required"
+    ]
+  },
+  "errors": []
+}
