@@ -52,6 +52,9 @@ Rules:
 - Number stops in the order the truck will visit them, starting at 1.
 - Use 24-hour times (HH:MM) and YYYY-MM-DD dates. If a date has no year, use the
   next occurrence of that date on or after today ({date.today().isoformat()}).
+- If the document gives only a flat or all-in rate with no breakdown, put it in
+  total and leave linehaul and fuel_surcharge null. Only fill linehaul or
+  fuel_surcharge when the document lists them separately.
 - Lumper fees paid later with a receipt are reimbursements, not part of the total.
 - Charges included in the total (like stop-off pay) are accessorials.
 - Fines and deductions (late delivery, no tracking) go in penalties.

@@ -76,7 +76,7 @@
     },
     "rate": {
       "total": 2150.0,
-      "linehaul": 2150.0,
+      "linehaul": null,
       "fuel_surcharge": null,
       "accessorials": [],
       "reimbursements": [
@@ -89,14 +89,12 @@
     },
     "penalties": [
       {
-        "reason": "Failure to maintain Macropoint tracking",
+        "reason": "failure to maintain tracking",
         "amount": 150.0
       }
     ],
     "tracking_required": true,
     "general_notes": [
-      "Rate is $2,150.00 flat (all-in).",
-      "Lumper at delivery will be reimbursed with valid receipt.",
       "Carrier must accept Macropoint tracking at dispatch."
     ]
   },

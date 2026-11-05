@@ -53,14 +53,14 @@
           }
         ],
         "notes": [
-          "Appointment required - carrier must call receiving to schedule",
+          "Carrier must call receiving to schedule appointment",
           "No parking on site at receiver"
         ]
       }
     ],
     "commodity": {
       "description": "frozen vegetables",
-      "packaging": "palletized",
+      "packaging": null,
       "pallet_count": 20,
       "weight_lbs": 41000
     },
@@ -73,13 +73,13 @@
     },
     "penalties": [
       {
-        "reason": "late delivery (charged by customer and passed through to carrier)",
+        "reason": "late delivery (charged by the customer and passed through to carrier)",
         "amount": 250
       }
     ],
     "tracking_required": false,
     "general_notes": [
-      "Reefer: run at 34F continuous",
+      "Reefer set to run at 34F continuous",
       "Pre-cool required"
     ]
   },

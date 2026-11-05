@@ -4,7 +4,7 @@
     "broker_mc": "553901",
     "broker_load_number": "RCT-20261109-04",
     "references": [],
-    "equipment": "53' dry van",
+    "equipment": "53 DV",
     "stops": [
       {
         "sequence": 1,
@@ -117,7 +117,7 @@
       "fuel_surcharge": 350.0,
       "accessorials": [
         {
-          "name": "stop-off pay (2 @ 75)",
+          "name": "stop pay (2 @ 75)",
           "amount": 150.0
         }
       ],
