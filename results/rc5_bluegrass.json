@@ -9,7 +9,7 @@
         "value": "5518830"
       }
     ],
-    "equipment": "53' dry van",
+    "equipment": "Van, 53 ft",
     "stops": [
       {
         "sequence": 1,
@@ -56,8 +56,8 @@
       }
     ],
     "commodity": {
-      "description": "bottled spirits in cases",
-      "packaging": null,
+      "description": "Bottled spirits in cases",
+      "packaging": "cases",
       "pallet_count": 18,
       "weight_lbs": 36200
     },
@@ -76,18 +76,22 @@
     },
     "penalties": [
       {
-        "reason": "late delivery, $100.00 per hour late, assessed by the consignee",
-        "amount": 100.0
+        "reason": "late delivery ($100.00 per hour late, assessed by the consignee)",
+        "amount": 100.0,
+        "source": "terms_and_conditions"
       },
       {
-        "reason": "failure to maintain active tracking link",
-        "amount": 200.0
+        "reason": "failure to maintain an active tracking link for the duration of the load (deduction from carrier pay)",
+        "amount": 200.0,
+        "source": "terms_and_conditions"
       }
     ],
     "tracking_required": true,
+    "conflicts": [],
     "general_notes": [
       "Detention is paid after 2 free hours at $40/hr with in/out times on the BOL.",
-      "Carrier may not re-broker or double broker this load."
+      "Carrier may not re-broker or double broker this load.",
+      "Carrier: J&T Trucking LLC"
     ]
   },
   "errors": []

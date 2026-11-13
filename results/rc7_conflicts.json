@@ -1,0 +1,92 @@
+{
+  "raw": {
+    "broker_name": "CROSSROADS LOGISTICS PARTNERS LLC",
+    "broker_mc": "731902",
+    "broker_load_number": "CLP-48207",
+    "references": [],
+    "equipment": "53' Dry Van",
+    "stops": [
+      {
+        "sequence": 1,
+        "stop_type": "pickup",
+        "location": {
+          "facility_name": "Delta Snack Foods Plant",
+          "address": "2900 Riverside Pkwy",
+          "city": "Macon",
+          "state": "GA",
+          "zip_code": "31201"
+        },
+        "time": {
+          "kind": "window",
+          "date": "2026-11-23",
+          "start": "06:00",
+          "end": "10:00"
+        },
+        "references": [
+          {
+            "kind": "Pickup #",
+            "value": "DSF-60017"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "sequence": 2,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "ShopMart Distribution Center 14",
+          "address": "1200 Logistics Way",
+          "city": "Jacksonville",
+          "state": "FL",
+          "zip_code": "32219"
+        },
+        "time": {
+          "kind": "appointment",
+          "date": "2026-11-24",
+          "start": "08:00",
+          "end": null
+        },
+        "references": [
+          {
+            "kind": "Appointment #",
+            "value": "SM-882140"
+          },
+          {
+            "kind": "PO",
+            "value": "7719302"
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "commodity": {
+      "description": "packaged snacks",
+      "packaging": null,
+      "pallet_count": 26,
+      "weight_lbs": 18400
+    },
+    "rate": {
+      "total": 1425.0,
+      "linehaul": null,
+      "fuel_surcharge": null,
+      "accessorials": [],
+      "reimbursements": []
+    },
+    "penalties": [],
+    "tracking_required": true,
+    "conflicts": [
+      "Lumper payment: the standard carrier notes say the driver pays the lumper at all ShopMart DCs and is reimbursed with the original receipt, but the load notes say the customer pays the lumper at delivery and the driver does NOT pay.",
+      "Delivery appointment time: the delivery section lists the appointment at 08:00 on 11/24, but the load notes say the receiver moved the appointment to 13:00 on 11/24 and not to arrive before 12:00."
+    ],
+    "general_notes": [
+      "Tracking must remain active from dispatch through delivery.",
+      "Load note: Receiver moved appointment to 1300 on 11/24. Do not arrive before 1200.",
+      "Load note: Lumper at delivery will be paid by the customer. Driver does NOT pay.",
+      "Standard carrier note: Driver pays lumper at all ShopMart DCs. Reimbursed with original receipt."
+    ]
+  },
+  "errors": [
+    "conflict: Lumper payment: the standard carrier notes say the driver pays the lumper at all ShopMart DCs and is reimbursed with the original receipt, but the load notes say the customer pays the lumper at delivery and the driver does NOT pay.",
+    "conflict: Delivery appointment time: the delivery section lists the appointment at 08:00 on 11/24, but the load notes say the receiver moved the appointment to 13:00 on 11/24 and not to arrive before 12:00."
+  ]
+}

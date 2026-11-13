@@ -9,7 +9,11 @@ from schema import RateConfirmation
 KEYS = Path(__file__).parent / "answer_keys"
 
 
-@pytest.mark.parametrize("name", ["rc1_peachtree", "rc2_lakeshore", "rc3_redclay", "rc5_bluegrass"])
+@pytest.mark.parametrize("name", [
+    "rc1_peachtree", "rc2_lakeshore", "rc3_redclay", "rc5_bluegrass",
+    "rc6a_magnolia_original", "rc6b_magnolia_revised", "rc7_conflicts",
+    "rc8_messy_totals", "rc9_multistop",
+])
 def test_good_answer_keys_pass(name):
     data = json.loads((KEYS / f"{name}.json").read_text())
     RateConfirmation.model_validate(data)

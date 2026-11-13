@@ -73,11 +73,13 @@
   "penalties": [
     {
       "reason": "late delivery, per hour late",
-      "amount": "100.00"
+      "amount": "100.00",
+      "source": "terms_and_conditions"
     },
     {
       "reason": "failure to maintain tracking",
-      "amount": "200.00"
+      "amount": "200.00",
+      "source": "terms_and_conditions"
     }
   ],
   "tracking_required": true,

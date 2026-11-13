@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 # Documents with a planted problem: the correct outcome is NEEDS REVIEW.
-EXPECT_REVIEW = {"rc4_summit"}
+EXPECT_REVIEW = {"rc4_summit", "rc7_conflicts", "rc8_messy_totals"}
 
 
 def get(data, *path):
@@ -53,9 +53,10 @@ def checks(key, got):
         yield (f"rate.{group} (amounts)",
                norm_list(a.get("amount") for a in get(key, "rate", group) or []),
                norm_list(a.get("amount") for a in get(got, "rate", group) or []))
-    yield ("penalties (amounts)",
-           norm_list(p.get("amount") for p in key.get("penalties", [])),
-           norm_list(p.get("amount") for p in got.get("penalties") or []))
+    yield ("penalties (amount|source)",
+           sorted(f"{norm(p.get('amount'))}|{p.get('source')}" for p in key.get("penalties", [])),
+           sorted(f"{norm(p.get('amount'))}|{p.get('source')}" for p in got.get("penalties") or []))
+    yield "has conflicts", bool(key.get("conflicts")), bool(got.get("conflicts"))
     yield "commodity.weight_lbs", get(key, "commodity", "weight_lbs"), get(got, "commodity", "weight_lbs")
     yield "commodity.pallet_count", get(key, "commodity", "pallet_count"), get(got, "commodity", "pallet_count")
 

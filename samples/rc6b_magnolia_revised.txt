@@ -1,0 +1,20 @@
+MAGNOLIA FREIGHT GROUP  -  MC 610455
+Carrier Load Confirmation
+
+Load: MFG-33018
+Carrier: J&T Trucking LLC
+Equipment: 53' Dry Van
+
+PICK 1:  Port City Imports, 600 Brampton Rd, Savannah, GA 31408
+         11/20/2026  0800-1400   PU# PCI-9921
+
+DROP 1:  Carolina Home Goods DC, 4400 Westinghouse Blvd, Charlotte, NC 28273
+         11/21/2026  APPT 0900   PO# CHG-55410
+
+DROP 2:  Carolina Home Goods Outlet, 1820 Battleground Ave, Greensboro, NC 27408
+         11/21/2026  APPT 1500   PO# CHG-55411
+
+Commodity: imported furniture, 24 pallets, 31,000 lbs
+Rate: $1,950.00 flat
+
+Tracking via Trucker Tools required.

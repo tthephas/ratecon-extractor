@@ -69,10 +69,11 @@
   "penalties": [
     {
       "reason": "late delivery",
-      "amount": "250.00"
+      "amount": "250.00",
+      "source": "load_specific"
     }
   ],
   "general_notes": [
-    "Run at 34F continuous, pre-cool required"
+    "Run at -10F continuous, pre-cool required"
   ]
 }

@@ -1,0 +1,103 @@
+{
+  "raw": {
+    "broker_name": "IRONBRIDGE FREIGHT SOLUTIONS",
+    "broker_mc": "845530",
+    "broker_load_number": "IFS-77412",
+    "references": [],
+    "equipment": "53' Reefer @ 36F",
+    "stops": [
+      {
+        "sequence": 1,
+        "stop_type": "pickup",
+        "location": {
+          "facility_name": "Gulf Coast Seafood Co",
+          "address": "75 Harbor Dr",
+          "city": "Mobile",
+          "state": "AL",
+          "zip_code": "36602"
+        },
+        "time": {
+          "kind": "window",
+          "date": "2026-11-09",
+          "start": "05:00",
+          "end": "09:00"
+        },
+        "references": [
+          {
+            "kind": "PU#",
+            "value": "GCS-1187"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "sequence": 2,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "Atlanta Fresh Market Warehouse",
+          "address": "3300 Moreland Ave SE",
+          "city": "Atlanta",
+          "state": "GA",
+          "zip_code": "30315"
+        },
+        "time": {
+          "kind": "appointment",
+          "date": "2026-11-09",
+          "start": "18:00",
+          "end": null
+        },
+        "references": [
+          {
+            "kind": "PO",
+            "value": "554870"
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "commodity": {
+      "description": "frozen seafood",
+      "packaging": null,
+      "pallet_count": 16,
+      "weight_lbs": 27500
+    },
+    "rate": {
+      "total": 2430.0,
+      "linehaul": 2100.0,
+      "fuel_surcharge": 380.0,
+      "accessorials": [
+        {
+          "name": "Detention (3 hrs @ $50)",
+          "amount": 150.0
+        },
+        {
+          "name": "Driver assist",
+          "amount": 100.0
+        },
+        {
+          "name": "Late delivery fee",
+          "amount": -200.0
+        },
+        {
+          "name": "Tracking non-compliance",
+          "amount": -100.0
+        }
+      ],
+      "reimbursements": []
+    },
+    "penalties": [],
+    "tracking_required": true,
+    "conflicts": [
+      "Commodity is frozen seafood, but the reefer set point is 36F (a chilled/fresh temperature). A frozen product needs a set point of about 10F or below."
+    ],
+    "general_notes": [
+      "Document is labeled 'Rate Confirmation (Settlement Copy)'.",
+      "Carrier: J&T Trucking LLC.",
+      "Reefer temperature: 36F.",
+      "Late delivery fee (-200.00) and tracking non-compliance (-100.00) are deductions already applied to carrier pay."
+    ]
+  },
+  "errors": [
+    "conflict: Commodity is frozen seafood, but the reefer set point is 36F (a chilled/fresh temperature). A frozen product needs a set point of about 10F or below."
+  ]
+}

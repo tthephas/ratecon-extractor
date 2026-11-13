@@ -58,8 +58,8 @@ class Commodity(BaseModel):
 
 
 class Accessorial(BaseModel):
-    name: str = Field(description="e.g. lumper, detention, stop-off")
-    amount: Decimal
+    name: str = Field(description="e.g. detention, stop-off pay, or a deduction like late fee")
+    amount: Decimal = Field(description="positive adds to pay; negative for deductions already applied")
 
 
 class Reimbursement(BaseModel):
@@ -91,8 +91,12 @@ class Rate(BaseModel):
 
 
 class Penalty(BaseModel):
+    """A warning: a fine charged ONLY if the carrier fails an obligation. Not yet charged."""
     reason: str = Field(description="e.g. late delivery, no automated tracking")
     amount: Optional[Decimal] = None
+    source: Literal["load_specific", "terms_and_conditions"] = Field(
+        description="load_specific = written for this load; terms_and_conditions = standard boilerplate"
+    )
 
 
 class RateConfirmation(BaseModel):
@@ -106,8 +110,14 @@ class RateConfirmation(BaseModel):
     stops: list[Stop]
     commodity: Optional[Commodity] = None
     rate: Rate
-    penalties: list[Penalty] = []
+    penalties: list[Penalty] = Field(
+        default=[], description="warnings of fines that apply only if an obligation is missed"
+    )
     tracking_required: bool = False
+    conflicts: list[str] = Field(
+        default=[],
+        description="contradictions found in the document, e.g. two notes disagreeing on who pays the lumper",
+    )
     general_notes: list[str] = Field(
         default=[], description="anything else important, e.g. reefer temperature, detention terms"
     )

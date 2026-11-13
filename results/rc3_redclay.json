@@ -4,7 +4,7 @@
     "broker_mc": "553901",
     "broker_load_number": "RCT-20261109-04",
     "references": [],
-    "equipment": "53 DV",
+    "equipment": "53' dry van",
     "stops": [
       {
         "sequence": 1,
@@ -77,7 +77,7 @@
           }
         ],
         "notes": [
-          "NO EARLY ARRIVALS AT SO3"
+          "No early arrivals at SO3."
         ]
       },
       {
@@ -117,7 +117,7 @@
       "fuel_surcharge": 350.0,
       "accessorials": [
         {
-          "name": "stop pay (2 @ 75)",
+          "name": "Stop pay (2 @ 75)",
           "amount": 150.0
         }
       ],
@@ -125,6 +125,7 @@
     },
     "penalties": [],
     "tracking_required": true,
+    "conflicts": [],
     "general_notes": []
   },
   "errors": []

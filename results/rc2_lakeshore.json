@@ -24,7 +24,7 @@
         },
         "references": [
           {
-            "kind": "PU#",
+            "kind": "pickup number",
             "value": "FHF-3381"
           }
         ],
@@ -53,7 +53,7 @@
           }
         ],
         "notes": [
-          "Carrier must call receiving to schedule appointment",
+          "Appointment required - carrier must call receiving to schedule; they book between 5am and 11am",
           "No parking on site at receiver"
         ]
       }
@@ -73,14 +73,17 @@
     },
     "penalties": [
       {
-        "reason": "late delivery (charged by the customer and passed through to carrier)",
-        "amount": 250
+        "reason": "Late delivery - charged by the customer and passed through to carrier",
+        "amount": 250,
+        "source": "load_specific"
       }
     ],
     "tracking_required": false,
+    "conflicts": [],
     "general_notes": [
-      "Reefer set to run at 34F continuous",
-      "Pre-cool required"
+      "Reefer set point: -10F continuous",
+      "Pre-cool required",
+      "Weight is approximate (approx 41,000 lb)"
     ]
   },
   "errors": []

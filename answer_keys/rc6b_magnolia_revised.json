@@ -1,0 +1,90 @@
+{
+  "broker_name": "Magnolia Freight Group",
+  "broker_mc": "610455",
+  "broker_load_number": "MFG-33018",
+  "equipment": "53' dry van",
+  "tracking_required": true,
+  "commodity": {
+    "description": "Imported furniture",
+    "packaging": "palletized",
+    "pallet_count": 24,
+    "weight_lbs": 31000
+  },
+  "stops": [
+    {
+      "sequence": 1,
+      "stop_type": "pickup",
+      "location": {
+        "facility_name": "Port City Imports",
+        "address": "600 Brampton Rd",
+        "city": "Savannah",
+        "state": "GA",
+        "zip_code": "31408"
+      },
+      "time": {
+        "kind": "window",
+        "date": "2026-11-20",
+        "start": "08:00",
+        "end": "14:00"
+      },
+      "references": [
+        {
+          "kind": "pickup number",
+          "value": "PCI-9921"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "sequence": 2,
+      "stop_type": "delivery",
+      "location": {
+        "facility_name": "Carolina Home Goods DC",
+        "address": "4400 Westinghouse Blvd",
+        "city": "Charlotte",
+        "state": "NC",
+        "zip_code": "28273"
+      },
+      "time": {
+        "kind": "appointment",
+        "date": "2026-11-21",
+        "start": "09:00",
+        "end": null
+      },
+      "references": [
+        {
+          "kind": "PO",
+          "value": "CHG-55410"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "sequence": 3,
+      "stop_type": "delivery",
+      "location": {
+        "facility_name": "Carolina Home Goods Outlet",
+        "address": "1820 Battleground Ave",
+        "city": "Greensboro",
+        "state": "NC",
+        "zip_code": "27408"
+      },
+      "time": {
+        "kind": "appointment",
+        "date": "2026-11-21",
+        "start": "15:00",
+        "end": null
+      },
+      "references": [
+        {
+          "kind": "PO",
+          "value": "CHG-55411"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "rate": {
+    "total": "1950.00"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "broker_name": "Crossroads Logistics Partners LLC",
+  "broker_mc": "731902",
+  "broker_load_number": "CLP-48207",
+  "equipment": "53' dry van",
+  "tracking_required": true,
+  "stops": [
+    {
+      "sequence": 1,
+      "stop_type": "pickup",
+      "location": {
+        "facility_name": "Delta Snack Foods Plant",
+        "address": "2900 Riverside Pkwy",
+        "city": "Macon",
+        "state": "GA",
+        "zip_code": "31201"
+      },
+      "time": {
+        "kind": "window",
+        "date": "2026-11-23",
+        "start": "06:00",
+        "end": "10:00"
+      },
+      "references": [
+        {
+          "kind": "pickup number",
+          "value": "DSF-60017"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "sequence": 2,
+      "stop_type": "delivery",
+      "location": {
+        "facility_name": "ShopMart Distribution Center 14",
+        "address": "1200 Logistics Way",
+        "city": "Jacksonville",
+        "state": "FL",
+        "zip_code": "32219"
+      },
+      "time": {
+        "kind": "appointment",
+        "date": "2026-11-24",
+        "start": "08:00",
+        "end": null
+      },
+      "references": [
+        {
+          "kind": "appointment number",
+          "value": "SM-882140"
+        },
+        {
+          "kind": "PO",
+          "value": "7719302"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "commodity": {
+    "description": "Packaged snacks",
+    "packaging": "palletized",
+    "pallet_count": 26,
+    "weight_lbs": 18400
+  },
+  "rate": {
+    "total": "1425.00"
+  },
+  "conflicts": [
+    "Standard note says driver pays lumper (reimbursed with receipt); load note says customer pays lumper and driver does not pay.",
+    "Delivery appointment listed as 0800 on 11/24, but load note says receiver moved it to 1300."
+  ]
+}

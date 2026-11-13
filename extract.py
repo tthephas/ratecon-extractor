@@ -43,7 +43,7 @@ def simplify(node):
 
 SCHEMA = simplify(transform_schema(RateConfirmation))
 
-SYSTEM_PROMPT = f"""You extract data from freight rate confirmations sent by a broker to a carrier.
+SYSTEM_PROMPT = """You extract data from freight rate confirmations sent by a broker to a carrier.
 
 Rules:
 - Transcribe exactly what the document says. Do NOT correct math or fill in values
@@ -51,13 +51,27 @@ Rules:
 - "SO" (stop-off) and "DEL" mean a delivery stop. "PU" means a pickup stop.
 - Number stops in the order the truck will visit them, starting at 1.
 - Use 24-hour times (HH:MM) and YYYY-MM-DD dates. If a date has no year, use the
-  next occurrence of that date on or after today ({date.today().isoformat()}).
+  next occurrence of that date on or after the date the document was received
+  (RECEIVED_DATE).
 - If the document gives only a flat or all-in rate with no breakdown, put it in
   total and leave linehaul and fuel_surcharge null. Only fill linehaul or
   fuel_surcharge when the document lists them separately.
 - Lumper fees paid later with a receipt are reimbursements, not part of the total.
 - Charges included in the total (like stop-off pay) are accessorials.
-- Fines and deductions (late delivery, no tracking) go in penalties.
+- Penalties are WARNINGS: fines that apply only if the carrier misses an obligation.
+  Tag each one load_specific or terms_and_conditions.
+- A deduction already applied to the pay (a line item that reduces the total) is an
+  accessorial with a NEGATIVE amount, not a penalty.
+- If any parts of the document contradict each other (notes vs stop times, two notes
+  about the same charge), do NOT pick a side: transcribe the main stop/rate sections
+  as written and describe each contradiction in conflicts.
+- Do not report rate math mismatches as conflicts; the system checks math separately.
+- Set tracking_required true if the document requires tracking OR mentions any fine,
+  deduction, or charge for tracking non-compliance (that implies tracking is required).
+- Always check reefer temperature against the commodity. Frozen products need a frozen
+  set point (about 10F or below). If the commodity is frozen but the temperature is
+  above that, or the commodity is fresh/chilled but the set point is frozen, report it
+  in conflicts.
 - If an appointment is required but not yet set, use kind "appointment_to_schedule".
 - Ignore numbers that are not pay, such as total miles.
 
@@ -67,12 +81,16 @@ Include every field; use null or [] when the document doesn't have it.
 SYSTEM_PROMPT += json.dumps(SCHEMA)
 
 
-def extract(document_text: str) -> dict:
-    """Send one rate con to Claude. Returns the raw extraction plus any validation errors."""
+def extract(document_text: str, received: date) -> dict:
+    """Send one rate con to Claude. Returns the raw extraction plus any validation errors.
+
+    received: the date the document arrived (an email's sent date in production).
+    Used to resolve dates with no year, so results don't change based on when we run.
+    """
     response = client.messages.create(
         model=MODEL,
         max_tokens=4096,
-        system=SYSTEM_PROMPT,
+        system=SYSTEM_PROMPT.replace("RECEIVED_DATE", received.isoformat()),
         messages=[{"role": "user", "content": document_text}],
     )
 
@@ -94,6 +112,9 @@ def extract(document_text: str) -> dict:
     except ValidationError as e:
         errors = [f"{'.'.join(map(str, err['loc']))}: {err['msg']}" for err in e.errors()]
 
+    # Policy: a person must resolve any contradiction Claude found.
+    errors += [f"conflict: {c}" for c in raw.get("conflicts") or []]
+
     return {"raw": raw, "errors": errors}
 
 
@@ -102,11 +123,15 @@ def main():
     if len(sys.argv) > 1:  # optional: run just one file, e.g. python3 extract.py rc3
         samples = [p for p in samples if sys.argv[1] in p.name]
 
+    dates_file = Path("samples/received_dates.json")
+    received_dates = json.loads(dates_file.read_text()) if dates_file.exists() else {}
+
     out_dir = Path("results")
     out_dir.mkdir(exist_ok=True)
 
     for path in samples:
-        result = extract(path.read_text())
+        received = date.fromisoformat(received_dates.get(path.stem, date.today().isoformat()))
+        result = extract(path.read_text(), received)
         (out_dir / f"{path.stem}.json").write_text(json.dumps(result, indent=2))
         status = "OK" if not result["errors"] else "NEEDS REVIEW"
         print(f"{path.stem:18} {status}")

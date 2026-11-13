@@ -1,0 +1,21 @@
+IRONBRIDGE FREIGHT SOLUTIONS  |  MC 845530
+Rate Confirmation (Settlement Copy)   Load IFS-77412
+
+Carrier: J&T Trucking LLC        Equipment: 53' Reefer @ 36F
+
+PU  Gulf Coast Seafood Co, 75 Harbor Dr, Mobile AL 36602
+    11/09/2026  window 0500-0900   PU# GCS-1187
+DEL Atlanta Fresh Market Warehouse, 3300 Moreland Ave SE, Atlanta GA 30315
+    11/09/2026  appt 1800   PO 554870
+
+Commodity: frozen seafood, 16 pallets, 27,500 lbs
+
+Charges:
+  Linehaul                          2,100.00
+  Fuel surcharge                      380.00
+  Detention (3 hrs @ $50)             150.00
+  Driver assist                       100.00
+  Late delivery fee                  -200.00
+  Tracking non-compliance            -100.00
+                                   ---------
+  Total carrier pay                 2,430.00

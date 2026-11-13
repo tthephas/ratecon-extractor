@@ -1,0 +1,92 @@
+{
+  "broker_name": "Ironbridge Freight Solutions",
+  "broker_mc": "845530",
+  "broker_load_number": "IFS-77412",
+  "equipment": "53' reefer",
+  "stops": [
+    {
+      "sequence": 1,
+      "stop_type": "pickup",
+      "location": {
+        "facility_name": "Gulf Coast Seafood Co",
+        "address": "75 Harbor Dr",
+        "city": "Mobile",
+        "state": "AL",
+        "zip_code": "36602"
+      },
+      "time": {
+        "kind": "window",
+        "date": "2026-11-09",
+        "start": "05:00",
+        "end": "09:00"
+      },
+      "references": [
+        {
+          "kind": "pickup number",
+          "value": "GCS-1187"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "sequence": 2,
+      "stop_type": "delivery",
+      "location": {
+        "facility_name": "Atlanta Fresh Market Warehouse",
+        "address": "3300 Moreland Ave SE",
+        "city": "Atlanta",
+        "state": "GA",
+        "zip_code": "30315"
+      },
+      "time": {
+        "kind": "appointment",
+        "date": "2026-11-09",
+        "start": "18:00",
+        "end": null
+      },
+      "references": [
+        {
+          "kind": "PO",
+          "value": "554870"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "commodity": {
+    "description": "Frozen seafood",
+    "packaging": "palletized",
+    "pallet_count": 16,
+    "weight_lbs": 27500
+  },
+  "rate": {
+    "total": "2430.00",
+    "linehaul": "2100.00",
+    "fuel_surcharge": "380.00",
+    "accessorials": [
+      {
+        "name": "detention (3 hrs @ $50)",
+        "amount": "150.00"
+      },
+      {
+        "name": "driver assist",
+        "amount": "100.00"
+      },
+      {
+        "name": "late delivery fee",
+        "amount": "-200.00"
+      },
+      {
+        "name": "tracking non-compliance",
+        "amount": "-100.00"
+      }
+    ]
+  },
+  "general_notes": [
+    "Reefer at 36F"
+  ],
+  "tracking_required": true,
+  "conflicts": [
+    "Commodity is frozen seafood, but the reefer is set at 36F, a chilled (not frozen) temperature."
+  ]
+}
