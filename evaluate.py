@@ -78,12 +78,19 @@ def checks(key, got):
 
 def main():
     total_right = total_fields = silent = docs = docs_correct = 0
+    # Each answer key can score several result files: the .txt version plus any
+    # PDF variants (rc1_peachtree_pdf, rc9_multistop_scan) of the same load.
+    runs = []
     for key_path in sorted(Path("answer_keys").glob("*.json")):
-        name = key_path.stem
-        result_path = Path("results") / f"{name}.json"
-        if not result_path.exists():
-            print(f"{name:18} no result file - run extract.py first")
-            continue
+        for variant in ("", "_pdf", "_scan"):
+            result_path = Path("results") / f"{key_path.stem}{variant}.json"
+            if result_path.exists():
+                runs.append((key_path, result_path))
+            elif variant == "":
+                print(f"{key_path.stem:24} no result file - run extract.py first")
+
+    for key_path, result_path in runs:
+        name = result_path.stem
 
         key = json.loads(key_path.read_text())
         result = json.loads(result_path.read_text())
@@ -104,7 +111,7 @@ def main():
         docs += 1
         if not misses:
             docs_correct += 1
-        if name in EXPECT_REVIEW:
+        if key_path.stem in EXPECT_REVIEW:
             status = "NEEDS REVIEW (expected)" if flagged else "MISSED - should have been flagged!"
         elif flagged:
             status = "NEEDS REVIEW"
@@ -113,7 +120,7 @@ def main():
             silent += 1
         else:
             status = "OK"
-        print(f"{name:18} {status:34} {score}")
+        print(f"{name:24} {status:34} {score}")
         for miss in misses:
             print(f"    - {miss}")
 

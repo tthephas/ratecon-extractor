@@ -1,6 +1,6 @@
 {
   "raw": {
-    "broker_name": "IRONBRIDGE FREIGHT SOLUTIONS",
+    "broker_name": "Ironbridge Freight Solutions",
     "broker_mc": "845530",
     "broker_load_number": "IFS-77412",
     "references": [],
@@ -88,16 +88,15 @@
     "penalties": [],
     "tracking_required": true,
     "conflicts": [
-      "Commodity is frozen seafood, but the reefer set point is 36F (a chilled/fresh temperature). A frozen product needs a set point of about 10F or below."
+      "Commodity is frozen seafood, but the reefer set point is 36F (a fresh/chilled temperature). Frozen product needs a set point of about 10F or below."
     ],
     "general_notes": [
       "Document is labeled 'Rate Confirmation (Settlement Copy)'.",
-      "Carrier: J&T Trucking LLC.",
-      "Reefer temperature: 36F.",
+      "Reefer temperature listed as 36F.",
       "Late delivery fee (-200.00) and tracking non-compliance (-100.00) are deductions already applied to carrier pay."
     ]
   },
   "errors": [
-    "conflict: Commodity is frozen seafood, but the reefer set point is 36F (a chilled/fresh temperature). A frozen product needs a set point of about 10F or below."
+    "conflict: Commodity is frozen seafood, but the reefer set point is 36F (a fresh/chilled temperature). Frozen product needs a set point of about 10F or below."
   ]
 }

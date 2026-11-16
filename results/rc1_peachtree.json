@@ -1,9 +1,14 @@
 {
   "raw": {
-    "broker_name": "PEACHTREE FREIGHT SOLUTIONS, LLC",
+    "broker_name": "Peachtree Freight Solutions, LLC",
     "broker_mc": "884213",
     "broker_load_number": "PFS-102938",
-    "references": [],
+    "references": [
+      {
+        "kind": "PO",
+        "value": "4410923"
+      }
+    ],
     "equipment": "53' Dry Van",
     "stops": [
       {
@@ -52,7 +57,7 @@
         },
         "references": [
           {
-            "kind": "Appointment #",
+            "kind": "Appt #",
             "value": "MOS-77215"
           },
           {
@@ -76,7 +81,7 @@
       "accessorials": [],
       "reimbursements": [
         {
-          "name": "Lumper at delivery",
+          "name": "Lumper",
           "amount": null,
           "condition": "with valid receipt"
         }
@@ -93,9 +98,8 @@
     "conflicts": [],
     "general_notes": [
       "Carrier must accept Macropoint tracking at dispatch.",
-      "Rate is flat all-in $2,150.00.",
-      "Carrier: J&T Trucking LLC, MC# 1122334.",
-      "Rate confirmation dated 11/03/2026."
+      "Lumper at delivery will be reimbursed with valid receipt.",
+      "Rate is flat all-in."
     ]
   },
   "errors": []

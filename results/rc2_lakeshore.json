@@ -60,7 +60,7 @@
     ],
     "commodity": {
       "description": "frozen vegetables",
-      "packaging": null,
+      "packaging": "palletized",
       "pallet_count": 20,
       "weight_lbs": 41000
     },
@@ -81,9 +81,8 @@
     "tracking_required": false,
     "conflicts": [],
     "general_notes": [
-      "Reefer set point: -10F continuous",
-      "Pre-cool required",
-      "Weight is approximate (approx 41,000 lb)"
+      "Reefer set point: run at -10F continuous",
+      "Pre-cool required"
     ]
   },
   "errors": []

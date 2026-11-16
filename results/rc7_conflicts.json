@@ -56,7 +56,9 @@
             "value": "7719302"
           }
         ],
-        "notes": []
+        "notes": [
+          "Load note: Receiver moved appointment to 1300 on 11/24. Do not arrive before 1200."
+        ]
       }
     ],
     "commodity": {
@@ -75,18 +77,17 @@
     "penalties": [],
     "tracking_required": true,
     "conflicts": [
-      "Lumper payment: the standard carrier notes say the driver pays the lumper at all ShopMart DCs and is reimbursed with the original receipt, but the load notes say the customer pays the lumper at delivery and the driver does NOT pay.",
-      "Delivery appointment time: the delivery section lists the appointment at 08:00 on 11/24, but the load notes say the receiver moved the appointment to 13:00 on 11/24 and not to arrive before 12:00."
+      "Delivery appointment time conflict: the delivery stop lists the appointment at 0800 on 11/24, but the load notes say the receiver moved the appointment to 1300 on 11/24 and not to arrive before 1200.",
+      "Lumper payment conflict: the standard carrier notes say the driver pays the lumper at all ShopMart DCs and is reimbursed with the original receipt, but the load notes say the customer pays the lumper at delivery and the driver does NOT pay."
     ],
     "general_notes": [
-      "Tracking must remain active from dispatch through delivery.",
-      "Load note: Receiver moved appointment to 1300 on 11/24. Do not arrive before 1200.",
-      "Load note: Lumper at delivery will be paid by the customer. Driver does NOT pay.",
-      "Standard carrier note: Driver pays lumper at all ShopMart DCs. Reimbursed with original receipt."
+      "Standard carrier note: Tracking must remain active from dispatch through delivery.",
+      "Standard carrier note: Driver pays lumper at all ShopMart DCs, reimbursed with original receipt (contradicted by load notes; see conflicts).",
+      "Load note: Lumper at delivery will be paid by the customer. Driver does NOT pay."
     ]
   },
   "errors": [
-    "conflict: Lumper payment: the standard carrier notes say the driver pays the lumper at all ShopMart DCs and is reimbursed with the original receipt, but the load notes say the customer pays the lumper at delivery and the driver does NOT pay.",
-    "conflict: Delivery appointment time: the delivery section lists the appointment at 08:00 on 11/24, but the load notes say the receiver moved the appointment to 13:00 on 11/24 and not to arrive before 12:00."
+    "conflict: Delivery appointment time conflict: the delivery stop lists the appointment at 0800 on 11/24, but the load notes say the receiver moved the appointment to 1300 on 11/24 and not to arrive before 1200.",
+    "conflict: Lumper payment conflict: the standard carrier notes say the driver pays the lumper at all ShopMart DCs and is reimbursed with the original receipt, but the load notes say the customer pays the lumper at delivery and the driver does NOT pay."
   ]
 }

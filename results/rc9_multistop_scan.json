@@ -1,0 +1,193 @@
+{
+  "raw": {
+    "broker_name": "Pinnacle Transport Brokers Inc",
+    "broker_mc": "498812",
+    "broker_load_number": "PTB-209931",
+    "references": [],
+    "equipment": "53' dry van",
+    "stops": [
+      {
+        "sequence": 1,
+        "stop_type": "pickup",
+        "location": {
+          "facility_name": "Atlanta Beverage Bottlers",
+          "address": "1600 Fulton Ind Blvd",
+          "city": "Atlanta",
+          "state": "GA",
+          "zip_code": "30336"
+        },
+        "time": {
+          "kind": "window",
+          "date": "2026-11-30",
+          "start": "05:00",
+          "end": "07:00"
+        },
+        "references": [
+          {
+            "kind": "pickup number",
+            "value": "ABB-4471"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "sequence": 2,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "QuickStop #212",
+          "address": "88 Main St",
+          "city": "Athens",
+          "state": "GA",
+          "zip_code": "30601"
+        },
+        "time": {
+          "kind": "fcfs",
+          "date": "2026-11-30",
+          "start": "08:00",
+          "end": "11:00"
+        },
+        "references": [
+          {
+            "kind": "PO",
+            "value": "31120"
+          }
+        ],
+        "notes": [
+          "Back in only"
+        ]
+      },
+      {
+        "sequence": 3,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "QuickStop #318",
+          "address": "410 Broad St",
+          "city": "Augusta",
+          "state": "GA",
+          "zip_code": "30901"
+        },
+        "time": {
+          "kind": "appointment",
+          "date": "2026-11-30",
+          "start": "13:00",
+          "end": null
+        },
+        "references": [
+          {
+            "kind": "PO",
+            "value": "31121"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "sequence": 4,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "QuickStop #405",
+          "address": "2200 Abercorn St",
+          "city": "Savannah",
+          "state": "GA",
+          "zip_code": "31401"
+        },
+        "time": {
+          "kind": "appointment",
+          "date": "2026-12-01",
+          "start": "07:00",
+          "end": null
+        },
+        "references": [
+          {
+            "kind": "PO",
+            "value": "31122"
+          }
+        ],
+        "notes": [
+          "Call 1 hr ahead"
+        ]
+      },
+      {
+        "sequence": 5,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "QuickStop #417",
+          "address": "15 Mall Blvd",
+          "city": "Brunswick",
+          "state": "GA",
+          "zip_code": "31525"
+        },
+        "time": {
+          "kind": "fcfs",
+          "date": "2026-12-01",
+          "start": "10:00",
+          "end": "14:00"
+        },
+        "references": [
+          {
+            "kind": "PO",
+            "value": "31123"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "sequence": 6,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "QuickStop #502",
+          "address": "9 N Main St",
+          "city": "Valdosta",
+          "state": "GA",
+          "zip_code": "31601"
+        },
+        "time": {
+          "kind": "appointment",
+          "date": "2026-12-01",
+          "start": "17:00",
+          "end": null
+        },
+        "references": [
+          {
+            "kind": "PO",
+            "value": "31124"
+          }
+        ],
+        "notes": [
+          "No trucks after 1800"
+        ]
+      }
+    ],
+    "commodity": {
+      "description": "Cased beverages",
+      "packaging": null,
+      "pallet_count": 22,
+      "weight_lbs": 42000
+    },
+    "rate": {
+      "total": 3760.0,
+      "linehaul": 2850.0,
+      "fuel_surcharge": 510.0,
+      "accessorials": [
+        {
+          "name": "Stop-offs (4 @ 100.00)",
+          "amount": 400.0
+        }
+      ],
+      "reimbursements": []
+    },
+    "penalties": [
+      {
+        "reason": "Late arrival to any appointment stop, per occurrence",
+        "amount": 150,
+        "source": "load_specific"
+      }
+    ],
+    "tracking_required": true,
+    "conflicts": [],
+    "general_notes": [
+      "Carrier: J&T Trucking LLC",
+      "Driver unload at all stops"
+    ]
+  },
+  "errors": []
+}

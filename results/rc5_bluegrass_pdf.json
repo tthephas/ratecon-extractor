@@ -1,0 +1,101 @@
+{
+  "raw": {
+    "broker_name": "Bluegrass Capacity Partners",
+    "broker_mc": "590047",
+    "broker_load_number": "BG-77120",
+    "references": [
+      {
+        "kind": "PO",
+        "value": "5518830"
+      }
+    ],
+    "equipment": "53' dry van",
+    "stops": [
+      {
+        "sequence": 1,
+        "stop_type": "pickup",
+        "location": {
+          "facility_name": "Kentucky Bourbon Bottling Co",
+          "address": "1 Distillery Ln",
+          "city": "Bardstown",
+          "state": "KY",
+          "zip_code": "40004"
+        },
+        "time": {
+          "kind": "window",
+          "date": "2026-11-18",
+          "start": "08:00",
+          "end": "14:00"
+        },
+        "references": [
+          {
+            "kind": "BOL",
+            "value": "30091"
+          }
+        ],
+        "notes": [
+          "Loading hours 8:00-14:00"
+        ]
+      },
+      {
+        "sequence": 2,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "Coastal Beverage Distributors",
+          "address": "4100 Sea Island Pkwy",
+          "city": "Savannah",
+          "state": "GA",
+          "zip_code": "31401"
+        },
+        "time": {
+          "kind": "window",
+          "date": "2026-11-19",
+          "start": "07:00",
+          "end": "12:00"
+        },
+        "references": [],
+        "notes": []
+      }
+    ],
+    "commodity": {
+      "description": "bottled spirits in cases",
+      "packaging": "cases",
+      "pallet_count": 18,
+      "weight_lbs": 36200
+    },
+    "rate": {
+      "total": 3050.0,
+      "linehaul": null,
+      "fuel_surcharge": null,
+      "accessorials": [],
+      "reimbursements": [
+        {
+          "name": "lumper",
+          "amount": 300.0,
+          "condition": "upon presentation of an original receipt; reimbursed up to $300.00"
+        }
+      ]
+    },
+    "penalties": [
+      {
+        "reason": "late delivery: $100.00 per hour late, may be assessed by the consignee and passed through to carrier",
+        "amount": 100.0,
+        "source": "terms_and_conditions"
+      },
+      {
+        "reason": "failure to maintain an active tracking link for the duration of the load (deduction from carrier pay)",
+        "amount": 200.0,
+        "source": "terms_and_conditions"
+      }
+    ],
+    "tracking_required": true,
+    "conflicts": [],
+    "general_notes": [
+      "Detention: paid after 2 free hours at $40.00 per hour, provided in and out times are recorded on the bill of lading.",
+      "Carrier may not re-broker or double broker this load.",
+      "Carrier: J&T Trucking LLC",
+      "All-in rate of $3,050.00 with no breakdown."
+    ]
+  },
+  "errors": []
+}

@@ -169,7 +169,7 @@
       "fuel_surcharge": 510.0,
       "accessorials": [
         {
-          "name": "Stop-offs (4 @ 100.00)",
+          "name": "Stop-off pay (4 @ 100.00)",
           "amount": 400.0
         }
       ],
@@ -185,8 +185,8 @@
     "tracking_required": true,
     "conflicts": [],
     "general_notes": [
-      "Driver unload at all stops.",
-      "Tracking required."
+      "DRIVER UNLOAD AT ALL STOPS",
+      "Carrier: J&T TRUCKING LLC"
     ]
   },
   "errors": []

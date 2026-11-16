@@ -1,0 +1,107 @@
+{
+  "raw": {
+    "broker_name": "Peachtree Freight Solutions, LLC",
+    "broker_mc": "884213",
+    "broker_load_number": "PFS-102938",
+    "references": [
+      {
+        "kind": "PO",
+        "value": "4410923"
+      }
+    ],
+    "equipment": "53' Dry Van",
+    "stops": [
+      {
+        "sequence": 1,
+        "stop_type": "pickup",
+        "location": {
+          "facility_name": "Georgia Paper Converters",
+          "address": "2200 Industrial Pkwy",
+          "city": "Dalton",
+          "state": "GA",
+          "zip_code": "30721"
+        },
+        "time": {
+          "kind": "window",
+          "date": "2026-11-10",
+          "start": "07:00",
+          "end": "15:00"
+        },
+        "references": [
+          {
+            "kind": "Pickup #",
+            "value": "GPC-55102"
+          },
+          {
+            "kind": "PO",
+            "value": "4410923"
+          }
+        ],
+        "notes": []
+      },
+      {
+        "sequence": 2,
+        "stop_type": "delivery",
+        "location": {
+          "facility_name": "Midwest Office Supply DC",
+          "address": "8800 Commerce Dr",
+          "city": "Indianapolis",
+          "state": "IN",
+          "zip_code": "46241"
+        },
+        "time": {
+          "kind": "appointment",
+          "date": "2026-11-11",
+          "start": "06:00",
+          "end": null
+        },
+        "references": [
+          {
+            "kind": "Appt #",
+            "value": "MOS-77215"
+          },
+          {
+            "kind": "PO",
+            "value": "4410923"
+          }
+        ],
+        "notes": []
+      }
+    ],
+    "commodity": {
+      "description": "Paper products",
+      "packaging": null,
+      "pallet_count": 22,
+      "weight_lbs": 38500
+    },
+    "rate": {
+      "total": 2150.0,
+      "linehaul": null,
+      "fuel_surcharge": null,
+      "accessorials": [],
+      "reimbursements": [
+        {
+          "name": "Lumper",
+          "amount": null,
+          "condition": "with valid receipt"
+        }
+      ]
+    },
+    "penalties": [
+      {
+        "reason": "Failure to maintain Macropoint tracking",
+        "amount": 150.0,
+        "source": "load_specific"
+      }
+    ],
+    "tracking_required": true,
+    "conflicts": [],
+    "general_notes": [
+      "Lumper at delivery will be reimbursed with valid receipt.",
+      "Carrier must accept Macropoint tracking at dispatch.",
+      "Carrier: J&T Trucking LLC, MC# 1122334",
+      "Rate confirmation dated 11/03/2026"
+    ]
+  },
+  "errors": []
+}

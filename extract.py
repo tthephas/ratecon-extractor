@@ -1,4 +1,5 @@
 """Extract structured load data from rate confirmations using Claude."""
+import base64
 import json
 import sys
 from datetime import date
@@ -81,7 +82,28 @@ Include every field; use null or [] when the document doesn't have it.
 SYSTEM_PROMPT += json.dumps(SCHEMA)
 
 
-def extract(document_text: str, received: date) -> dict:
+def build_content(path: Path):
+    """Turn a file into message content. Text files go as text; PDFs go as a document block,
+    which Claude reads page by page as both text and images (so scans work too)."""
+    if path.suffix.lower() == ".pdf":
+        pdf_data = base64.standard_b64encode(path.read_bytes()).decode("utf-8")
+        return [
+            {"type": "document",
+             "source": {"type": "base64", "media_type": "application/pdf", "data": pdf_data}},
+            {"type": "text", "text": "Extract this rate confirmation."},
+        ]
+    return path.read_text()
+
+
+def base_name(stem: str) -> str:
+    """rc1_peachtree_pdf -> rc1_peachtree: format variants share one answer key."""
+    for suffix in ("_pdf", "_scan"):
+        if stem.endswith(suffix):
+            return stem[: -len(suffix)]
+    return stem
+
+
+def extract(content, received: date) -> dict:
     """Send one rate con to Claude. Returns the raw extraction plus any validation errors.
 
     received: the date the document arrived (an email's sent date in production).
@@ -91,7 +113,7 @@ def extract(document_text: str, received: date) -> dict:
         model=MODEL,
         max_tokens=4096,
         system=SYSTEM_PROMPT.replace("RECEIVED_DATE", received.isoformat()),
-        messages=[{"role": "user", "content": document_text}],
+        messages=[{"role": "user", "content": content}],
     )
 
     if response.stop_reason != "end_turn":
@@ -119,7 +141,7 @@ def extract(document_text: str, received: date) -> dict:
 
 
 def main():
-    samples = sorted(Path("samples").glob("*.txt"))
+    samples = sorted(p for p in Path("samples").iterdir() if p.suffix in (".txt", ".pdf"))
     if len(sys.argv) > 1:  # optional: run just one file, e.g. python3 extract.py rc3
         samples = [p for p in samples if sys.argv[1] in p.name]
 
@@ -130,11 +152,11 @@ def main():
     out_dir.mkdir(exist_ok=True)
 
     for path in samples:
-        received = date.fromisoformat(received_dates.get(path.stem, date.today().isoformat()))
-        result = extract(path.read_text(), received)
+        received_str = received_dates.get(base_name(path.stem), date.today().isoformat())
+        result = extract(build_content(path), date.fromisoformat(received_str))
         (out_dir / f"{path.stem}.json").write_text(json.dumps(result, indent=2))
         status = "OK" if not result["errors"] else "NEEDS REVIEW"
-        print(f"{path.stem:18} {status}")
+        print(f"{path.stem:24} {status}")
         for err in result["errors"]:
             print(f"    - {err}")
 
