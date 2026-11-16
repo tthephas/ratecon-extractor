@@ -33,9 +33,7 @@
             "value": "30091"
           }
         ],
-        "notes": [
-          "Loading hours 8:00-14:00"
-        ]
+        "notes": []
       },
       {
         "sequence": 2,
@@ -78,12 +76,12 @@
     },
     "penalties": [
       {
-        "reason": "late delivery: $100.00 per hour late, may be assessed by the consignee and passed through to carrier",
+        "reason": "late delivery, $100.00 per hour late, may be assessed by the consignee and passed through to carrier",
         "amount": 100.0,
         "source": "terms_and_conditions"
       },
       {
-        "reason": "failure to maintain an active tracking link for the duration of the load (deduction from carrier pay)",
+        "reason": "failure to maintain an active tracking link for the duration of the load, $200.00 deduction from carrier pay",
         "amount": 200.0,
         "source": "terms_and_conditions"
       }
@@ -93,9 +91,13 @@
     "general_notes": [
       "Detention: paid after 2 free hours at $40.00 per hour, provided in and out times are recorded on the bill of lading.",
       "Carrier may not re-broker or double broker this load.",
-      "Carrier: J&T Trucking LLC",
-      "All-in rate of $3,050.00 with no breakdown."
+      "Carrier: J&T Trucking LLC.",
+      "Terms and conditions are governed by federal law and the laws of the Commonwealth of Kentucky."
     ]
   },
-  "errors": []
+  "errors": [],
+  "tokens": {
+    "in": 26760,
+    "out": 776
+  }
 }

@@ -33,9 +33,7 @@
             "value": "30091"
           }
         ],
-        "notes": [
-          "Loading hours 8:00-14:00"
-        ]
+        "notes": []
       },
       {
         "sequence": 2,
@@ -58,7 +56,7 @@
       }
     ],
     "commodity": {
-      "description": "Bottled spirits",
+      "description": "Bottled spirits in cases",
       "packaging": "cases",
       "pallet_count": 18,
       "weight_lbs": 36200
@@ -78,7 +76,7 @@
     },
     "penalties": [
       {
-        "reason": "late delivery ($100.00 per hour late, assessed by the consignee)",
+        "reason": "late delivery, $100.00 per hour late, assessed by the consignee",
         "amount": 100.0,
         "source": "terms_and_conditions"
       },
@@ -93,8 +91,12 @@
     "general_notes": [
       "Detention is paid after 2 free hours at $40/hr, with in/out times on the BOL.",
       "Carrier may not re-broker or double broker this load.",
-      "Carrier: J&T Trucking LLC"
+      "Carrier must maintain an active tracking link for the duration of the load."
     ]
   },
-  "errors": []
+  "errors": [],
+  "tokens": {
+    "in": 4656,
+    "out": 1117
+  }
 }

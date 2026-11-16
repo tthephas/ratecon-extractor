@@ -115,7 +115,7 @@ def extract(content, received: date) -> dict:
         system=SYSTEM_PROMPT.replace("RECEIVED_DATE", received.isoformat()),
         messages=[{"role": "user", "content": content}],
     )
-
+    tokens = {"in": response.usage.input_tokens, "out": response.usage.output_tokens}
     if response.stop_reason != "end_turn":
         return {"raw": None, "errors": [f"unexpected stop_reason: {response.stop_reason}"]}
 
@@ -137,7 +137,7 @@ def extract(content, received: date) -> dict:
     # Policy: a person must resolve any contradiction Claude found.
     errors += [f"conflict: {c}" for c in raw.get("conflicts") or []]
 
-    return {"raw": raw, "errors": errors}
+    return {"raw": raw, "errors": errors, "tokens": tokens}
 
 
 def main():
@@ -156,7 +156,8 @@ def main():
         result = extract(build_content(path), date.fromisoformat(received_str))
         (out_dir / f"{path.stem}.json").write_text(json.dumps(result, indent=2))
         status = "OK" if not result["errors"] else "NEEDS REVIEW"
-        print(f"{path.stem:24} {status}")
+        tokens = result.get("tokens", {})
+        print(f"{path.stem:24} {status:13} (in: {tokens.get('in', 0):,}  out: {tokens.get('out', 0):,})")
         for err in result["errors"]:
             print(f"    - {err}")
 
