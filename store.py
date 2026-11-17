@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS rate_cons (
     received_date TEXT NOT NULL,      -- when the rate con arrived (YYYY-MM-DD)
     source_file   TEXT,               -- which file it came from
     doc_hash      TEXT NOT NULL,      -- fingerprint of the original document
+    doc_text      TEXT,               -- the document's own words ("" for scans), for wording diffs
     data          TEXT,               -- Claude's extraction, stored as JSON text
     errors        TEXT NOT NULL,      -- validation errors and conflicts, JSON list
     changes       TEXT NOT NULL,      -- what changed vs the previous version, JSON list
@@ -51,7 +52,7 @@ def latest_version(conn: sqlite3.Connection, load_number: str):
     return version
 
 
-def save(conn, load_number, received_date, source_file, doc_hash, data, errors, changes, status) -> int:
+def save(conn, load_number, received_date, source_file, doc_hash, doc_text, data, errors, changes, status) -> int:
     """Store a new version of a load and return its version number."""
     previous = latest_version(conn, load_number)
     version = 1 if previous is None else previous["version"] + 1
@@ -59,12 +60,12 @@ def save(conn, load_number, received_date, source_file, doc_hash, data, errors, 
     conn.execute(
         """
         INSERT INTO rate_cons
-            (load_number, version, received_date, source_file, doc_hash,
+            (load_number, version, received_date, source_file, doc_hash, doc_text,
              data, errors, changes, status)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
-            load_number, version, received_date, source_file, doc_hash,
+            load_number, version, received_date, source_file, doc_hash, doc_text,
             json.dumps(data, default=str), json.dumps(errors), json.dumps(changes), status,
         ),
     )
@@ -73,13 +74,17 @@ def save(conn, load_number, received_date, source_file, doc_hash, data, errors, 
 
 
 def review_queue(conn: sqlite3.Connection) -> list:
-    """The newest version of every load whose status needs a person (anything but ok)."""
+    """The newest real version of every load that needs a person.
+
+    Duplicates are skipped: an identical re-send shouldn't hide the revision before it.
+    """
     rows = conn.execute(
         """
         SELECT load_number, version, status, changes, errors
         FROM rate_cons AS r
-        WHERE version = (SELECT MAX(version) FROM rate_cons WHERE load_number = r.load_number)
-          AND status != 'ok'
+        WHERE version = (SELECT MAX(version) FROM rate_cons
+                         WHERE load_number = r.load_number AND status != 'duplicate')
+          AND status NOT IN ('ok', 'duplicate')
         ORDER BY received_date
         """
     ).fetchall()
